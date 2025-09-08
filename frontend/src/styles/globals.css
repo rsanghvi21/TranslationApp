@@ -1,0 +1,68 @@
+:root {
+  /* Warm paper surfaces */
+  --paper-50: #FFFCF7;
+  --paper-100: #FAF7F2;
+  --paper-200: #F2ECE4;
+  --paper-300: #E8E2D9;
+  
+  /* Ink (text) */
+  --ink-900: #0F0E0D;
+  --ink-700: #1C1B19;
+  --ink-500: #4D4B46;
+  
+  /* Terracotta (primary accent) */
+  --terra-700: #A95E45;
+  --terra-600: #CC785C;
+  --terra-500: #DA7756;
+  --terra-400: #E08C70;
+  --terra-300: #E8A892;
+  
+  /* Olive gray (secondary) */
+  --olive-700: #5E5D55;
+  --olive-600: #6F6E66;
+  --olive-500: #828179;
+  --olive-300: #B9B7AF;
+
+  /* UI tokens */
+  --hairline: var(--paper-300);
+  --ring: rgba(204, 120, 92, 0.6);
+  --link: var(--terra-600);
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.06), 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper-50: #0B0B0A;
+    --paper-100: #11100F;
+    --paper-200: #171614;
+    --paper-300: rgba(255, 255, 255, 0.12);
+    --ink-900: #F5F3EF;
+    --ink-700: #D9D5CE;
+    --ink-500: #A7A39B;
+    --terra-600: #E0967B;
+    --terra-400: #F0B29D;
+    --olive-500: #B9B7AF;
+    --hairline: var(--paper-300);
+    --ring: rgba(224, 150, 123, 0.7);
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    @apply bg-paper-100 text-ink-700 antialiased;
+  }
+  
+  a {
+    @apply underline decoration-paper-300 underline-offset-[6px] hover:text-terra-600;
+  }
+  
+  :focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--ring);
+  }
+}
