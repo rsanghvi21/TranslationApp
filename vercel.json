@@ -1,7 +1,13 @@
 {
   "version": 2,
   "functions": {
-    "src/app/api/**/*.ts": {
+    "src/app/api/translate/route.ts": {
+      "maxDuration": 30
+    },
+    "src/app/api/translate/stream/route.ts": {
+      "maxDuration": 30
+    },
+    "src/app/api/pdf/route.ts": {
       "maxDuration": 30
     }
   }
